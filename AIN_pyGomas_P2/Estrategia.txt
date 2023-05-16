@@ -1,0 +1,13 @@
+Estrategia
+
+
+
+
+
+
+
+¿Qué vamos a hacer?
+
+- Comprobar que no mandamos a un agente a una pared
+- Ocuparnos del fuego amigo evitando que nuestros agentes maten a agentes del mismo equipo.
+- Disparar solo si sabemos que vamos a darle (para realizar esto lo que hemos hecho es obtener el angulo al enemigo y en caso de que sea mayor a un cierto valor no disparamos.)
