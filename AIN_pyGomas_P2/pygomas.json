@@ -6,7 +6,7 @@
     "service_password": "secret",
     "axis": [
 		{
-            "rank": "newSoldier.newSoldier",
+            "rank": "agentes.soldado",
             "name": "axis_asaneher",
             "password": "secret",
             "amount": 5,
@@ -25,7 +25,7 @@
             "asl": "bdifieldop.asl"
         },
         {
-            "rank": "captain.captain",
+            "rank": "agentes.capitan",
             "name": "axis_capt_asaneher",
             "password": "secret",
             "amount": 5,

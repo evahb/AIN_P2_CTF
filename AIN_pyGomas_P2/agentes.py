@@ -20,7 +20,21 @@ from agentspeak.stdlib import actions as asp_action
 from pygomas.ontology import DESTINATION
 from pygomas.agent import LONG_RECEIVE_WAIT
 
-class agente(BDITroop):
+class soldado(BDITroop):
+    def add_custom_actions(self, actions):
+        super().add_custom_actions(actions)
+
+        @actions.add(".nuevaaccion", 0)
+        def _nuevaaccion(agent, term, intention):
+        # Codigo
+
+        yield
+
+
+
+
+
+class capitan(BDITroop):
     def add_custom_actions(self, actions):
         super().add_custom_actions(actions)
 
