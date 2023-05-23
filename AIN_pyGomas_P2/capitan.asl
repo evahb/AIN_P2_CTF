@@ -7,8 +7,9 @@
   +medico(0);
   +fieldop(0).
 
-+asignar("soldado")[Source(A)]
++asignar("soldado")[source(A)]
   <- 
   ?soldado(N);
   .send(A, tell, asignar(N));
+  .print("soldado ", A, " asginado con el numero ",  N)
   -+soldado(N+1).

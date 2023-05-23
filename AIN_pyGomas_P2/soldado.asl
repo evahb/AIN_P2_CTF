@@ -11,7 +11,7 @@
 +asignar(N)
   <-
   +asignacion(N);
-  .
+  .print("soldado asignado ", N) .
 
 //TEAM_ALLIED
 
