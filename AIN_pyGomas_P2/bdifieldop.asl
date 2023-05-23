@@ -1,4 +1,4 @@
-//TEAM_AXIS
+// Operador de campo
 
 +flag (F): team(200) 
   <-
