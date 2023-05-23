@@ -6,44 +6,30 @@
     "service_password": "secret",
     "axis": [
 		{
-            "rank": "BDISoldier",
-            "name": "axis_yourlogin",
+            "rank": "newSoldier.newSoldier",
+            "name": "axis_asaneher",
             "password": "secret",
-            "amount": 8,
-            "asl": "bdisoldier.asl"
+            "amount": 5,
+            "asl": "soldado.asl"
         },
         {
             "rank": "BDIMedic",
-            "name": "medic_axis_yourlogin",
+            "name": "medic_axis_asaneher",
             "password": "secret",
             "asl": "bdimedic.asl"
         },
          {
             "rank": "BDIFieldOp",
-            "name": "fieldop_axis_yourlogin",
+            "name": "fieldop_axis_asaneher",
             "password": "secret",
             "asl": "bdifieldop.asl"
-        }
-    ],
-     "allied": [
-		{
-            "rank": "BDISoldier",
-            "name": "allied_yourlogin",
-            "password": "secret",
-            "amount": 8,
-            "asl": "bdisoldier.asl"
         },
         {
-            "rank": "BDIMedic",
-            "name": "medic_allied_yourlogin",
+            "rank": "captain.captain",
+            "name": "axis_capt_asaneher",
             "password": "secret",
-            "asl": "bdimedic.asl"
-        },
-         {
-            "rank": "BDIFieldOp",
-            "name": "fieldop_allied_yourlogin",
-            "password": "secret",
-            "asl": "bdifieldop.asl"
+            "amount": 5,
+            "asl": "capitan.asl"
         }
-   ]
+    ]     
   }

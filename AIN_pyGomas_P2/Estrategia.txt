@@ -1,9 +1,7 @@
 Estrategia
-
-
-
-
-
+SOMOS EL EJE - DEFENDEMOS
+EVAAAAAAAAAAAAAAAAAAAAAA
+Definir una función en python que dada la posición de las dos bases y la bandera calcule posiciones pa to el mundo
 
 
 ¿Qué vamos a hacer?
@@ -11,3 +9,14 @@ Estrategia
 - Comprobar que no mandamos a un agente a una pared
 - Ocuparnos del fuego amigo evitando que nuestros agentes maten a agentes del mismo equipo.
 - Disparar solo si sabemos que vamos a darle (para realizar esto lo que hemos hecho es obtener el angulo al enemigo y en caso de que sea mayor a un cierto valor no disparamos.)
+- Posicionar soldados en base a la pos de la bandera.
+
+* Si me disparan, buscar a quien me dispara Y pedir refuerzos 
+Refuerzos del soldado más cercano que esté 'vigilando' 
+
+Requisitos:
+- Equipo de 10 agentes
+- Paso de mensajes
+- Servicios nuevos --> Coronel, general...
+- Comportamientos internos de los agentes (por ej: fuego amigo)
+- Acción Interna (python) --> Función nueva que se llame "initalPosFlag" --> Coloca a los soldados alrededor de la bandera y se quedan rotando 
