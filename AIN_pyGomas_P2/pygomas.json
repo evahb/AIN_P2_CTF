@@ -1,8 +1,8 @@
 {
     "host": "gtirouter.dsic.upv.es",
-    "manager": "manager_yourlogin",
+    "manager": "manager_asaneher",
     "manager_password": "secret",
-    "service": "service_yourlogin",
+    "service": "service_asaneher",
     "service_password": "secret",
     "axis": [
 		{
@@ -16,13 +16,13 @@
             "rank": "BDIMedic",
             "name": "medic_axis_asaneher",
             "password": "secret",
-            "asl": "bdimedic.asl"
+            "asl": "medico.asl"
         },
          {
             "rank": "BDIFieldOp",
             "name": "fieldop_axis_asaneher",
             "password": "secret",
-            "asl": "bdifieldop.asl"
+            "asl": "operador.asl"
         },
         {
             "rank": "agentes.capitan",
@@ -31,5 +31,26 @@
             "amount": 5,
             "asl": "capitan.asl"
         }
-    ]     
+    ],
+    "allied": [
+		{
+            "rank": "BDISoldier",
+            "name": "soldier_allied_asaneher",
+            "password": "secret",
+            "amount": 8,
+            "asl": "bdisoldier.asl"
+        },
+        {
+            "rank": "BDIMedic",
+            "name": "medic_allied_asaneher",
+            "password": "secret",
+            "asl": "bdimedic.asl"
+        },
+         {
+            "rank": "BDIFieldOp",
+            "name": "fieldop_allied_asaneher",
+            "password": "secret",
+            "asl": "bdifieldop.asl"
+        }
+   ]  
   }

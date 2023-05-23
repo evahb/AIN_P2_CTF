@@ -1,4 +1,4 @@
-// Soldado raso
+//TEAM_AXIS
 
 +flag (F): team(200)
   <-

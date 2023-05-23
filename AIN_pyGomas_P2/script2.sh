@@ -1,0 +1,1 @@
+pygomas run -g pygomas.json

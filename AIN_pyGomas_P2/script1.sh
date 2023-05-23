@@ -1,0 +1,1 @@
+pygomas manager -j manager_asaneher@gtirouter.dsic.upv.es -m map_11 -sj service_asaneher@gtirouter.dsic.upv.es -np 20
