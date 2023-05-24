@@ -16,19 +16,21 @@
             "rank": "BDIMedic",
             "name": "medic_axis_asaneher",
             "password": "secret",
+            "amount": 2,
             "asl": "medico.asl"
         },
          {
             "rank": "BDIFieldOp",
             "name": "fieldop_axis_asaneher",
             "password": "secret",
+            "amount": 2,
             "asl": "operador.asl"
         },
         {
             "rank": "agentes.capitan",
             "name": "axis_capt_asaneher",
             "password": "secret",
-            "amount": 5,
+            "amount": 1,
             "asl": "capitan.asl"
         }
     ],
