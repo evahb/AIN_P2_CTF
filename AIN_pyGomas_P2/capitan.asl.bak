@@ -11,5 +11,5 @@
   <- 
   ?soldado(N);
   .send(A, tell, asignar(N));
-  .print("soldado ", A, " asginado con el numero ",  N);
+  .print("soldado ", A, " asginado con el numero ",  N)
   -+soldado(N+1).

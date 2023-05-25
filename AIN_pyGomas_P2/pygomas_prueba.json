@@ -1,0 +1,32 @@
+{
+    "host": "gtirouter.dsic.upv.es",
+    "manager": "m",
+    "manager_password": "secret",
+    "service": "s",
+    "service_password": "secret",
+    "axis": [
+		{
+            "rank": "BDISoldier",
+            "name": "vlc_axis",
+            "password": "secret",
+            "amount": 6,
+            "asl": "soldado.asl"
+        },
+        {
+            "rank": "BDIFieldOp",
+            "name": "vlc_fieldop_axis",
+            "password": "secret",
+            "asl": "capitan.asl"
+        }
+    ],
+    "allied": [
+		{
+            "rank": "BDISoldier",
+            "name": "vlc_allied",
+            "password": "secret",
+            "amount": 1,
+            "asl": "bdisoldier.asl"
+        }
+       
+    ]
+} 
