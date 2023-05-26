@@ -14,13 +14,14 @@ from spade_bdi.bdi import BDIAgent
 import random
 from pygomas.bditroop import BDITroop
 from pygomas.bdifieldop import BDIFieldOp
+from pygomas.bdisoldier import BDISoldier
 from agentspeak import Actions
 from agentspeak import grounded
 from agentspeak.stdlib import actions as asp_action
 from pygomas.ontology import DESTINATION
 from pygomas.agent import LONG_RECEIVE_WAIT
 
-class soldado(BDITroop):
+class soldado(BDISoldier):
     def add_custom_actions(self, actions):
         super().add_custom_actions(actions)
 
@@ -34,7 +35,7 @@ class soldado(BDITroop):
 
 
 
-class capitan(BDITroop):
+class capitan(BDISoldier):
     def add_custom_actions(self, actions):
         super().add_custom_actions(actions)
 
@@ -48,7 +49,7 @@ class capitan(BDITroop):
         def _posicionSoldados(flag):
             # Codigo
             x = flag[0]
-            z = flag[0]
+            z = flag[2]
             posiciones = []
 
             for i in [1, -1]:

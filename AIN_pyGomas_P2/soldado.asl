@@ -11,13 +11,13 @@
 
 +asignar(N)
   <-
-  +asignacion(N);
-  .print("soldado asignado ", N) .
+  .print("soldado asignado ", N).
 
-+posiciones(Posiciones): asignacion(Num)
++posiciones(Posiciones): asignar(Num)
   <-
+  +posicionesIniciales(Posiciones);
   .nth(Num, Posiciones, Punto);
-  .print("Agente: ", Num, "asignado al punto: ", Punto);
+  .print("Agente: ", Num, " asignado al punto: ", Punto);
   .goto(Punto).
 
 //TEAM_ALLIED

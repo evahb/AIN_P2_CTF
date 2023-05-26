@@ -7,8 +7,8 @@
   +medico(0);
   +fieldop(0);
   .posicionSoldados(F,P);
-  +posicionSoldados(P);
-  .print("posiciones de soldados: ", P);
+  +posicionesIniciales(P);
+  .print("posiciones de soldados: ", P, "bandera en: ", F);
 
   .wait(1000);
   .get_backups.
@@ -22,5 +22,6 @@
 
 +myBackups(Backups_list)
   <-
+  ?posicionesIniciales(P);
   .send(Backups_list, tell, posiciones(P)).
   
