@@ -44,7 +44,7 @@ class capitan(BDITroop):
 
             yield
 
-        @actions.add(".poscionSoldados", (tuple,))
+        @actions.add_function(".poscionSoldados", (tuple))
         def _posicionSoldados(flag):
             # Codigo
             x = flag[0]
@@ -60,7 +60,11 @@ class capitan(BDITroop):
                             if self.map.can_walk(x + i*k, z + j*k):
                                 posiciones.append((x + i*k, 0, z + j*k))
                                 continue
-            
-
+                        for k in range(0,30):
+                            if self.map.can_walk(x + i*k, z + j*k):
+                                posiciones.append((x + i*k, 0, z + j*k))
+                                continue
+                            #si con esto la posición alcanzable.. en fin...
+                            
             return tuple(posiciones)
     

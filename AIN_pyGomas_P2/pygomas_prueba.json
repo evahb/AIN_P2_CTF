@@ -9,7 +9,7 @@
             "rank": "agentes.soldado",
             "name": "vlc_axis",
             "password": "secret",
-            "amount": 6,
+            "amount": 4,
             "asl": "soldado.asl"
         },
         {

@@ -2,6 +2,7 @@
 
 +flag (F): team(200)
   <-
+  .wait(1000);
   .get_service("capitan").
 
 +capitan(Cap_List)
@@ -12,6 +13,12 @@
   <-
   +asignacion(N);
   .print("soldado asignado ", N) .
+
++posiciones(Posiciones): asignacion(Num)
+  <-
+  .nth(Num, Posiciones, Punto);
+  .print("Agente: ", Num, "asignado al punto: ", Punto);
+  .goto(Punto).
 
 //TEAM_ALLIED
 
