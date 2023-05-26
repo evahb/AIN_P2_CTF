@@ -28,7 +28,7 @@ class soldado(BDITroop):
         def _nuevaaccion(agent, term, intention):
         # Codigo
 
-        yield
+            yield
 
 
 
@@ -42,4 +42,25 @@ class capitan(BDITroop):
         def _nuevaaccion(agent, term, intention):
         # Codigo
 
-        yield
+            yield
+
+        @actions.add(".poscionSoldados", (tuple,))
+        def _posicionSoldados(flag):
+            # Codigo
+            x = flag[0]
+            z = flag[0]
+            posiciones = []
+
+            for i in [1, -1]:
+                for j in [1, -1]:
+                    if self.map.can_walk(x + i*30, z + j*30):
+                        posiciones.append((x + i*30, 0, z + j*30))
+                    else:
+                        for k in range(30,70):
+                            if self.map.can_walk(x + i*k, z + j*k):
+                                posiciones.append((x + i*k, 0, z + j*k))
+                                continue
+            
+
+            return tuple(posiciones)
+    

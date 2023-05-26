@@ -5,7 +5,10 @@
   .register_service("capitan");
   +soldado(0);
   +medico(0);
-  +fieldop(0).
+  +fieldop(0);
+  .posicionSoldados(F,P);
+  +posicionSoldados(P);
+  .print(P).
 
 +asignar("soldado")[source(A)]
   <- 

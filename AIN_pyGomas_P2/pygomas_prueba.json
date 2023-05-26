@@ -6,14 +6,14 @@
     "service_password": "secret",
     "axis": [
 		{
-            "rank": "BDISoldier",
+            "rank": "agentes.soldado",
             "name": "vlc_axis",
             "password": "secret",
             "amount": 6,
             "asl": "soldado.asl"
         },
         {
-            "rank": "BDIFieldOp",
+            "rank": "agentes.capitan",
             "name": "vlc_fieldop_axis",
             "password": "secret",
             "asl": "capitan.asl"
