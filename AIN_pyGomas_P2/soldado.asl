@@ -27,6 +27,7 @@ rot_points(4).
 +target_reached(T): aPuntoVigia
   <- -aPuntoVigia;
      +rotando;
+     +rotar(0);
      -target_reached(T).
 
 +rotar(N): rotando & rot_points(T) & N==T
@@ -46,7 +47,7 @@ rot_points(4).
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-  .look_at(Position);
-      
+
 
       .shoot(10,Position).
 
