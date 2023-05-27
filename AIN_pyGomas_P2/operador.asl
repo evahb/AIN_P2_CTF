@@ -2,6 +2,7 @@
 
 +flag (F): team(200) 
   <- +aBandera; 
+  .print("operador ha nacido");
      .goto(F).
 
 

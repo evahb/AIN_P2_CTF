@@ -10,7 +10,7 @@
   +posicionesIniciales(P);
   .print("posiciones de soldados: ", P, "bandera en: ", F);
 
-  .wait(1000);
+  .wait(2000);
   .get_backups.
 
 +asignar("soldado")[source(A)]
@@ -20,7 +20,7 @@
   .print("soldado ", A, " asginado con el numero ",  N);
   -+soldado(N+1).
 
-+myBackups(Backups_list)
++myBackups(Backups_list)//: soldado(S) & S >= 4
   <-
   ?posicionesIniciales(P);
   .print("Lista con posiciones iniciales enviada a soldados");

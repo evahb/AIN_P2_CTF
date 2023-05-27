@@ -30,7 +30,7 @@
             "name": "vlc_axis_fieldop",
             "password": "secret",
             "amount": 2,
-            "asl": "medico.asl"
+            "asl": "operador.asl"
         }
     ],
     "allied": [
