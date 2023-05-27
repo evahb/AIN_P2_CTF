@@ -23,5 +23,6 @@
 +myBackups(Backups_list)
   <-
   ?posicionesIniciales(P);
+  .print("Lista con posiciones iniciales enviada a soldados");
   .send(Backups_list, tell, posiciones(P)).
   

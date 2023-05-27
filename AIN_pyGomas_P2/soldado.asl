@@ -3,7 +3,7 @@
 
 +flag (F): team(200)
   <-
-  .wait(1000);
+  .wait(2000);
   .get_service("capitan").
 
 +capitan(Cap_List)
