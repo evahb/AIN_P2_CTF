@@ -1,7 +1,5 @@
 //TEAM_AXIS
 
-rotacion([[0,0,0],[255,0,0],[255,0,255],[0,0,255]]).
-rot_points(4).
 
 +flag (F): team(200)
   <-
@@ -27,29 +25,24 @@ rot_points(4).
 +target_reached(T): aPuntoVigia
   <- -aPuntoVigia;
      +rotando;
-     +rotar(0);
+     !!rotar(1);
      -target_reached(T).
 
-+rotar(N): rotando & rot_points(T) & N==T
-    <-  -rotar(N);
-        +rotar(0).
-
-
-+rotar(N): rotando & rot_points(T) & N < T
-    <-  ?rotacion(L);
-        .nth(N,L,A);
-        .look_at(A);
-        .wait(1000);
-        -rotar(N);
-        +rotar(N+1).
+     
++!rotar(R): rotando
+	<-
+	.turn(R);
+	.wait(250);
+	!!rotar(R + 1).
 
 /* Visualiza enemigos */
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-  .look_at(Position);
-
-
-      .shoot(10,Position).
+  if(rotando){
+    -rotando;
+  };
+  .shoot(10,Position).
 
 //TEAM_ALLIED
 
