@@ -7,16 +7,30 @@
     "axis": [
 		{
             "rank": "agentes.soldado",
-            "name": "vlc_axis",
+            "name": "vlc_axis_soldier",
             "password": "secret",
-            "amount": 4,
+            "amount": 5,
             "asl": "soldado.asl"
         },
         {
             "rank": "agentes.capitan",
-            "name": "vlc_fieldop_axis",
+            "name": "vlc_capitan_axis",
             "password": "secret",
             "asl": "capitan.asl"
+        },
+        {
+            "rank": "BDIMedic",
+            "name": "vlc_axis_medic",
+            "password": "secret",
+            "amount": 2,
+            "asl": "medico.asl"
+        },
+        {
+            "rank": "BDIFieldOp",
+            "name": "vlc_axis_fieldop",
+            "password": "secret",
+            "amount": 2,
+            "asl": "medico.asl"
         }
     ],
     "allied": [

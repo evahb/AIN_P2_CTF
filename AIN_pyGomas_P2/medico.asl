@@ -5,7 +5,6 @@
      .goto(F).
 
 
-
 +target_reached(T): aBandera
   <-
     .print("Llego a la bandera");

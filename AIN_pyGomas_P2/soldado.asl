@@ -15,13 +15,19 @@
   <-
   .print("soldado asignado ", N).
 
-+posiciones(Posiciones): asignar(Num)
++posiciones(Posiciones): asignar(Num) & Num < 4
   <-
   +posicionesIniciales(Posiciones);
   .nth(Num, Posiciones, Punto);
   .print("Agente: ", Num, " asignado al punto: ", Punto);
   +aPuntoVigia;
   .goto(Punto).
+
++posiciones(Posiciones): asignar(Num) & Num == 4
+  <-  .print("Soy el soldado 4");
+      ?Flag(F);
+      +aPuntoVigia;
+      .goto(F).
 
 +target_reached(T): aPuntoVigia
   <- -aPuntoVigia;
@@ -44,4 +50,3 @@
   };
   .shoot(10,Position).
 
-//TEAM_ALLIED
