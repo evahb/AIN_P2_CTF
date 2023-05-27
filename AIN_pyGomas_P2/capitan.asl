@@ -20,7 +20,7 @@
   .print("soldado ", A, " asginado con el numero ",  N);
   -+soldado(N+1).
 
-+myBackups(Backups_list)
++myBackups(Backups_list): soldado(3)
   <-
   ?posicionesIniciales(P);
   .print("Lista con posiciones iniciales enviada a soldados");
