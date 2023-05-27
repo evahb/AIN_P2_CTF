@@ -3,7 +3,7 @@
 
 +flag (F): team(200)
   <-
-  .wait(2000);
+  .wait(1000);
   .get_service("capitan").
 
 +capitan(Cap_List)
@@ -25,15 +25,14 @@
 +target_reached(T): aPuntoVigia
   <- -aPuntoVigia;
      +rotando;
-     !!rotar(1);
+     +rotar(0);
      -target_reached(T).
-
      
-+!rotar(R): rotando
++rotar(0): rotando
 	<-
-	.turn(R);
+	.turn(1.5);
 	.wait(250);
-	!!rotar(R + 1).
+	-+rotar(0).
 
 /* Visualiza enemigos */
 
