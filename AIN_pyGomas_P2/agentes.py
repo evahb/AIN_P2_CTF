@@ -54,14 +54,14 @@ class capitan(BDISoldier):
 
             for i in [1, -1]:
                 for j in [1, -1]:
-                    if self.map.can_walk(x + i*30, z + j*30):
-                        posiciones.append((x + i*30, 0, z + j*30))
+                    if self.map.can_walk(x + i*25, z + j*25):
+                        posiciones.append((x + i*25, 0, z + j*25))
                     else:
-                        for k in range(30,70):
+                        for k in range(25,70):
                             if self.map.can_walk(x + i*k, z + j*k):
                                 posiciones.append((x + i*k, 0, z + j*k))
                                 continue
-                        for k in range(0,30):
+                        for k in range(0,25):
                             if self.map.can_walk(x + i*k, z + j*k):
                                 posiciones.append((x + i*k, 0, z + j*k))
                                 continue
