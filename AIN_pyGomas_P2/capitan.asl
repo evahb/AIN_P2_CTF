@@ -5,7 +5,7 @@
   .register_service("capitan");
   +soldado(0);
   +medico(0);
-  +fieldop(0);
+  +fieldop(1);
   .posicionSoldados(F,P);
   +posicionesIniciales(P);
   .print("posiciones de soldados: ", P, "bandera en: ", F);
@@ -20,9 +20,18 @@
   .print("soldado ", A, " asginado con el numero ",  N);
   -+soldado(N+1).
 
-+myBackups(Backups_list): 
++myBackups(Backups_list)
   <-
   ?posicionesIniciales(P);
   .print("Lista con posiciones iniciales enviada a soldados");
-  .send(Backups_list, tell, posiciones(P)).
+  .send(Backups_list, tell, posiciones(P));
+  +rotando;
+  +rotar(0).
+     
++rotar(0): rotando
+	<-
+	.turn(1.5);
+	.wait(250);
+	-+rotar(0).
+  
   

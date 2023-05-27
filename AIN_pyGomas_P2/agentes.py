@@ -68,4 +68,6 @@ class capitan(BDISoldier):
                             #si con esto la posición alcanzable.. en fin...
 
             return tuple(posiciones)
+        
+      
     
