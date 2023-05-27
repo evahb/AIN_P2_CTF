@@ -1,5 +1,8 @@
 //TEAM_AXIS
 
+rotacion([[0,0,0],[255,0,0],[255,0,255],[0,0,255]]).
+rot_points(4).
+
 +flag (F): team(200)
   <-
   .wait(1000);
@@ -18,14 +21,37 @@
   +posicionesIniciales(Posiciones);
   .nth(Num, Posiciones, Punto);
   .print("Agente: ", Num, " asignado al punto: ", Punto);
+  +aPuntoVigia;
   .goto(Punto).
+
++target_reached(T): aPuntoVigia
+  <- -aPuntoVigia;
+     +rotando;
+     -target_reached(T).
+
++rotar(N): rotando & rot_points(T) & N==T
+    <-  -rotar(N);
+        +rotar(0).
+
+
++rotar(N): rotando & rot_points(T) & N < T
+    <-  ?rotacion(L);
+        .nth(N,L,A);
+        .look_at(A);
+        .wait(1000);
+        -rotar(N);
+        +rotar(N+1).
+
+/* Visualiza enemigos */
+
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <-  .look_at(Position);
+      
+
+      .shoot(10,Position).
 
 //TEAM_ALLIED
 
-+flag (F): team(100)
-  <-
-    
-  .goto(F).
 
 +flag_taken: team(100)
   <-
@@ -49,7 +75,3 @@
   .print("target_reached");
   +exploring;
   .turn(0.375).
-
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
-  <-
-  .shoot(3,Position).
