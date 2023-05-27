@@ -25,7 +25,7 @@
 
 +posiciones(Posiciones): asignar(Num) & Num == 4
   <-  .print("Soy el soldado 4");
-      ?Flag(F);
+      ?flag(F);
       +aPuntoVigia;
       .goto(F).
 
