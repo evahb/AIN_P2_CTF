@@ -93,6 +93,6 @@
 +health(H): H >= 20 & solicitarSalud
   <- -solicitarSalud;
 
-+solicitudHecha(N)[source(A)]
++solicitudHecha(N)
   <-  .print("Solicitud salud hecha"); 
       +buscarSalud.

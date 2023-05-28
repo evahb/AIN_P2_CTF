@@ -50,7 +50,7 @@
 
 /*Peticiciones de salud*/
 
-+solSalud(N)[source(A)]: not solicitandoAyuda
++solSalud(N): not solicitandoAyuda
   <-  +solicitandoAyuda;
       .print("Soldado", N, " ha solicitado salud.");
       ?myMedics(Medics_List);

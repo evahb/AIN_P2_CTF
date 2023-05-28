@@ -23,7 +23,7 @@
   //+friends_in_fov(ID,Type,Angle,Distance,Health,Position)
   //<- .print("Friend in fov - medic").
 
-+generarSalud(N)[source(A)]
++generarSalud(N)
   <-  .print(A," nos ha pedido que dejemos paquetes de salud.");
       .cure;
       .print("Paquete de salud creado").
