@@ -40,9 +40,7 @@ paquete_tipo(1001, "medicina").
 	<-
 	.turn(1.5);
 	.wait(250);
-	-+rotar(0)
-  ?flag(F);
-  .shoot(5, F).
+	-+rotar(0).
 
 /* Visualiza enemigos */
 
@@ -61,6 +59,8 @@ paquete_tipo(1001, "medicina").
       -disparando;
       ?health(H);
       +health(H);
+      ?ammo(A);
+      +ammo(A);
       +rotando;
       +rotar(0);
     };
