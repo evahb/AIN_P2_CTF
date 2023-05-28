@@ -40,6 +40,13 @@
             "password": "secret",
             "amount": 1,
             "asl": "bdisoldier.asl"
+        },
+        {
+            "rank": "BDISoldier",
+            "name": "vlc_allied",
+            "password": "secret",
+            "amount": 1,
+            "asl": "bdisoldierstandstill.asl"
         }
        
     ]

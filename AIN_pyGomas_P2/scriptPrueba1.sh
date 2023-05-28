@@ -1,1 +1,1 @@
-pygomas manager -j m_eherber@gtirouter.dsic.upv.es -m map_11 -sj s_eherber@gtirouter.dsic.upv.es -np 11
+pygomas manager -j m_eherber@gtirouter.dsic.upv.es -m map_11 -sj s_eherber@gtirouter.dsic.upv.es -np 12

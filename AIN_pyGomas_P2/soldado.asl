@@ -78,7 +78,7 @@
 
 /* Salud */
 
-+health(H): H < 20 & not solicitarSalud
++health(H): H < 50 & not solicitarSalud //cambiar valor a lo mejor
 	<-
 	+solicitarSalud.
 
@@ -90,10 +90,47 @@
 	.send(Cap_List, tell, solSalud(N));
 	.wait(1500).
 
-+health(H): H >= 20 & solicitarSalud
++health(H): H >= 50 & solicitarSalud //cambiar valor aqui tb
   <- 
   -solicitarSalud.
 
 +solicitudHecha(N)
   <-  .print("Solicitud salud hecha"); 
       +buscarSalud.
+
++buscarSalud
+  <- ?flag(F);
+     .goto(F);
+     +aporsalud;
+     +nopaquetefijado;
+     -buscarSalud.
+
+// TYPE == 1001 SALUD
+// TYPE == 1002 MUNICION
++packs_in_fov(ID, TYPE, ANGLE, DIST, HEALTH, POS): TYPE == 1001 & nopaquetefijado & aporsalud
+  <-    .print("Se ha disparado packs in fov - health");
+        -nopaquetefijado;
+        +aporpaquete;
+        +paqueteacoger(TYPE);
+        .goto(POS).
+
++target_reached(T): aporpaquete
+    <-  -aporpaquete;
+        ?paqueteacoger(P);
+        -paqueteacoger(P);
+        +pack_taken(P).
+
++pack_taken(Type): Type < 1003 
+    <-  ?paquete_tipo(Type, Tipo);
+    	  .print("He cogido un paquete de tipo: ", Tipo);
+    	  if(Type == 1001){
+    	     -aporsalud;
+    	  };/*
+        if(Type == 1002)
+           -apormunicion;
+    	  };  Cuando esté lo de munición implementado lo podemos poner */
+        // Vuelve a su pos inicial
+        ?asignar(Num);
+        ?posicionesIniciales(Posiciones);
+        .nth(Num, Posiciones, Punto);
+        .goto(Punto).
