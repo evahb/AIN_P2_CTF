@@ -73,6 +73,8 @@ paquete_tipo(1001, "medicina").
     .print("Disparo 5 - Creencia 2");
     if(Health < 3){
       -disparando;
+      ?health(H);
+      +health(H);
       +rotando;
       +rotar(0);
     };
