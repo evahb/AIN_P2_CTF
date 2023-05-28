@@ -43,25 +43,31 @@
 
 /* Visualiza enemigos */
 
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position): atacando
-  <-  .look_at(Position);
-      if(rotando){
-      -rotando;
-      };
-      .shoot(15,Position).
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2)
+  <-
+  if(rotando){
+    -rotando;
+  };
+  if(not friends_in_fov(_,_,Angle,_,_,_)){ 
+    .shoot(5,Position);
+  };
+  -enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
 
-+friends_in_fov(ID,Type,Angle,Distance,Health,Position)
-  <- .print("Friend in fov").
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <-
+  if(rotando){
+    -rotando;
+  };
+  if(not friends_in_fov(_,_,Angle,_,_,_)){ 
+    .shoot(5,Position);
+  }.
+
++friends_in_fov(ID,Type,Angle,Distance,Health,Position): friends_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2)
+  <-
+  -friends_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
 
 
-+enemies_in_fov(_, _, _, _, _, Position)
-	<-
-	.look_at(Position);
-	.print("Nuevo enemy in fov");
-	+puedoDisparar(True);
-	.while (?friends_in_fov(_,_,_,_,_,AmigoPos) & ?puedoDisparar(C) & C) {
-		?position(MiPosicion);
-		.print("Position", MiPosicion);
-	}  
-	
-	-puedoDisparar(_).
+
+
+
+
