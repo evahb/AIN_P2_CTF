@@ -49,7 +49,8 @@
       -rotando;
       };
       +atacando;
-      if(?friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA)){
+      ?friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA);
+      if(posA){
         .print("Fuego amigo - Ten cuidado");
       }
       .shoot(10,Position);
