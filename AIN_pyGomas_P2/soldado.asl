@@ -59,7 +59,7 @@
   -enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
 */
 
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position): 
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
   .print("Salud", Health);
   .look_at(Position);
@@ -67,8 +67,14 @@
     -rotando;
   };
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
+    +disparando;
     .shoot(5,Position);
     .print("Disparo 5 - Creencia 2");
+    if(Health < 3){
+      -disparando;
+      +rotando;
+      +rotar(0);
+    };
   }.
 
 /* Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados */
@@ -79,8 +85,11 @@
 
 /* Salud */
 
-+health(H): H < 10 & not solicitarSalud //cambiar valor a lo mejor
++health(H): H < 20 & not solicitarSalud & not disparando //cambiar valor a lo mejor
 	<-
+  if(rotando){
+    -rotando;
+  };
 	+solicitarSalud.
 
 
@@ -91,7 +100,7 @@
 	.send(Cap_List, tell, solSalud(N));
 	.wait(1500).
 
-+health(H): H >= 10 & solicitarSalud //cambiar valor aqui tb
++health(H): H >= 20 & solicitarSalud //cambiar valor aqui tb
   <- 
   -solicitarSalud.
 
@@ -131,7 +140,9 @@
            -apormunicion;
     	  };  Cuando esté lo de munición implementado lo podemos poner */
         // Vuelve a su pos inicial
+        -pack_taken(Type);
         ?asignar(Num);
         ?posicionesIniciales(Posiciones);
         .nth(Num, Posiciones, Punto);
+        +aPuntoVigia;
         .goto(Punto).
