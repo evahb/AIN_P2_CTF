@@ -43,12 +43,25 @@
 
 /* Visualiza enemigos */
 
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position): atacando
   <-  .look_at(Position);
       if(rotando){
       -rotando;
       };
-      .shoot(10,Position).
+      .shoot(15,Position).
 
-//+friends_in_fov(ID,Type,Angle,Distance,Health,Position)
-//  <- .print("Friend in fov").
++friends_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <- .print("Friend in fov").
+
+
++enemies_in_fov(_, _, _, _, _, Position)
+	<-
+	.look_at(Position);
+	.print("Nuevo enemy in fov");
+	+puedoDisparar(True);
+	.while (?friends_in_fov(_,_,_,_,_,AmigoPos) & ?puedoDisparar(C) & C) {
+		?position(MiPosicion);
+		.print("Position", MiPosicion);
+	}  
+	
+	-puedoDisparar(_).
