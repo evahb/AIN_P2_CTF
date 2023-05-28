@@ -42,26 +42,35 @@
 	-+rotar(0).
 
 /* Visualiza enemigos */
-
+/* 
+  Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados 
+  Si la creencia enemies_in_fov ya estaba anteriormente, la borra
+*/
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2)
   <-
+  .look_at(Position);
   if(rotando){
     -rotando;
   };
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     .shoot(5,Position);
+    .print("Disparo 5 - Creencia 1");
   };
   -enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
 
+
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
+  .look_at(Position);
   if(rotando){
     -rotando;
   };
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     .shoot(5,Position);
+    .print("Disparo 5 - Creencia 2");
   }.
 
+/* Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados */
 +friends_in_fov(ID,Type,Angle,Distance,Health,Position): friends_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2)
   <-
   -friends_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
