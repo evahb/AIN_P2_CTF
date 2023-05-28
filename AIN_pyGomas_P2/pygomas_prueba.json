@@ -43,7 +43,7 @@
         },
         {
             "rank": "BDISoldier",
-            "name": "vlc_allied",
+            "name": "vlc_allied_stand_still",
             "password": "secret",
             "amount": 1,
             "asl": "bdisoldierstandstill.asl"
