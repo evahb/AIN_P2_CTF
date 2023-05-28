@@ -1,8 +1,8 @@
 {
     "host": "gtirouter.dsic.upv.es",
-    "manager": "m",
+    "manager": "m_eherber",
     "manager_password": "secret",
-    "service": "s",
+    "service": "s_eherber",
     "service_password": "secret",
     "axis": [
 		{
