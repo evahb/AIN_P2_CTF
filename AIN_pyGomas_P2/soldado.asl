@@ -91,7 +91,8 @@
 	.wait(1500).
 
 +health(H): H >= 20 & solicitarSalud
-  <- -solicitarSalud;
+  <- 
+  -solicitarSalud.
 
 +solicitudHecha(N)
   <-  .print("Solicitud salud hecha"); 
