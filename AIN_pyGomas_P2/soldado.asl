@@ -46,7 +46,7 @@
   Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados 
   Si la creencia enemies_in_fov ya estaba anteriormente, la borra
 */
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2)
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2) & Position != Position2
   <-
   .look_at(Position);
   if(rotando){
