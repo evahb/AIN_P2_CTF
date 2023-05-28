@@ -45,8 +45,17 @@
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-  .look_at(Position);
-  if(rotando){
-    -rotando;
-  };
-  .shoot(10,Position).
+      if(rotando){
+      -rotando;
+      };
+      +atacando;
+      if(?friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA)){
+        .print("Fuego amigo - Ten cuidado");
+      }
+      .shoot(10,Position);
+      -enemies_in_fov(ID,Type,Angle,Distance,Health,Position).
+
++friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA)
+  <- .print("Friends in fov").
+
 
