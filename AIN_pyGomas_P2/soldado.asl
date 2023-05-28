@@ -1,5 +1,6 @@
 //TEAM_AXIS
-
+paquete_tipo(1002, "municion").
+paquete_tipo(1001, "medicina").
 
 +flag (F): team(200)
   <-
