@@ -3,7 +3,7 @@
 +flag (F): team(200) 
   <- +aBandera; 
     .print("medico ha nacido");
-    .get_service("capitan").
+    .get_service("capitan");
     .goto(F).
 
 
