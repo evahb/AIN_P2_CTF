@@ -33,5 +33,8 @@
 	.turn(1.5);
 	.wait(250);
 	-+rotar(0).
+
++friends_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <- .print("Friend in fov - capitan").
   
   

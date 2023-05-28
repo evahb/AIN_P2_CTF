@@ -48,11 +48,7 @@
       if(rotando){
       -rotando;
       };
-      +atacando;
-      ?friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA);
       .shoot(10,Position).
 
-+friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA)
-  <- .print("Friends in fov").
-
-
++friends_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <- .print("Friend in fov").
