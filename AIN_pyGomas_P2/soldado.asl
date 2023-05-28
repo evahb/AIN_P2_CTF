@@ -76,7 +76,23 @@
   -friends_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
 
 
+/* Salud */
+
++health(H): H < 20 & not solicitarSalud
+	<-
+	+solicitarSalud.
 
 
++solicitarSalud
+	<-
+	?capitan(Cap_List);
+  ?asignar(N);
+	.send(Cap_List, tell, solSalud(N));
+	.wait(1500).
 
++health(H): H >= 20 & solicitarSalud
+  <- -solicitarSalud;
 
++solicitudHecha(N)[source(A)]
+  <-  .print("Solicitud salud hecha"); 
+      +buscarSalud.

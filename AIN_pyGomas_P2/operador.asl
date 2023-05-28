@@ -22,3 +22,14 @@
 
  //+friends_in_fov(ID,Type,Angle,Distance,Health,Position)
   //<- .print("Friend in fov - fieldop").
+
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <-
+  .look_at(Position);
+  if(rotando){
+    -rotando;
+  };
+  if(not friends_in_fov(_,_,Angle,_,_,_)){ 
+    .shoot(5,Position);
+  }.
+
