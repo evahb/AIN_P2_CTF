@@ -94,7 +94,7 @@
   <- 
   -solicitarSalud.
 
-+solicitudHecha(N)
++solicitudHecha(N)[source(A)]
   <-  .print("Solicitud salud hecha"); 
       +buscarSalud.
 
