@@ -50,11 +50,7 @@
       };
       +atacando;
       ?friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA);
-      if(posA){
-        .print("Fuego amigo - Ten cuidado");
-      }
-      .shoot(10,Position);
-      -enemies_in_fov(ID,Type,Angle,Distance,Health,Position).
+      .shoot(10,Position).
 
 +friends_in_fov(IDA,TypeA,AngleA,DistanceA,HealthA,posA)
   <- .print("Friends in fov").
