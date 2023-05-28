@@ -4,7 +4,6 @@
 +flag (F): team(200)
   <-
   .wait(1000);
-  +prueba;
   .get_service("capitan").
 
 
@@ -46,7 +45,7 @@
 /* 
   Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados 
   Si la creencia enemies_in_fov ya estaba anteriormente, la borra
-*/
+
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2) & not(Position == Position2)
   <-
   .look_at(Position);
@@ -58,11 +57,11 @@
     .print("Disparo 5 - Creencia 1");
   };
   -enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
+*/
 
-
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position): prueba
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position): 
   <-
-  -prueba;
+  .print("Salud", Health);
   .look_at(Position);
   if(rotando){
     -rotando;
