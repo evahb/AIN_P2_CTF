@@ -26,6 +26,7 @@
 +generarSalud(N)[source(A)]
   <-  .print(A," nos ha pedido que dejemos paquetes de salud.");
       .cure;
+      .cure;
       .print("Paquete de salud creado").
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
@@ -37,3 +38,4 @@
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     .shoot(5,Position);
   }.
+

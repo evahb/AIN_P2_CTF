@@ -55,7 +55,19 @@
       .print("Soldado", N, " ha solicitado salud.");
       ?myMedics(Medics_List);
       .send(Medics_List, tell, generarSalud(N));
-      .send(A, tell, solicitudHecha(N));
+      .send(A, tell, solicitudSaludHecha(N));
+      .wait(1000);
+      -solicitandoAyuda.
+
+
+/*Peticiciones de municion*/
+
++solMunicion(N)[source(A)]: not solicitandoAyuda
+  <-  +solicitandoAyuda;
+      .print("Soldado", N, " ha solicitado municion.");
+      ?myFieldOps(FieldOps_List);
+      .send(FieldOps_List, tell, generarMunicion(N));
+      .send(A, tell, solicitudMunicionHecha(N));
       .wait(1000);
       -solicitandoAyuda.
 

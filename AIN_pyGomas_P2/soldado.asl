@@ -43,22 +43,6 @@ paquete_tipo(1001, "medicina").
 	-+rotar(0).
 
 /* Visualiza enemigos */
-/* 
-  Hace que la creencia se mantenga actualizada y se borren creeencias anteriores con datos desactualizados 
-  Si la creencia enemies_in_fov ya estaba anteriormente, la borra
-
-+enemies_in_fov(ID,Type,Angle,Distance,Health,Position): enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2) & not(Position == Position2)
-  <-
-  .look_at(Position);
-  if(rotando){
-    -rotando;
-  };
-  if(not friends_in_fov(_,_,Angle,_,_,_)){ 
-    .shoot(5,Position);
-    .print("Disparo 5 - Creencia 1");
-  };
-  -enemies_in_fov(ID,Type2,Angle2,Distance2,Health2,Position2).
-*/
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
@@ -70,7 +54,7 @@ paquete_tipo(1001, "medicina").
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     +disparando;
     .shoot(5,Position);
-    .print("Disparo 5 - Creencia 2");
+    .print("Disparo 5");
     if(Health < 3){
       -disparando;
       ?health(H);
@@ -107,7 +91,7 @@ paquete_tipo(1001, "medicina").
   <- 
   -solicitarSalud.
 
-+solicitudHecha(N)[source(A)]
++solicitudSaludHecha(N)[source(A)]
   <-  .print("Solicitud salud hecha"); 
       +buscarSalud.
 
@@ -119,7 +103,7 @@ paquete_tipo(1001, "medicina").
      -buscarSalud.
 
 // TYPE == 1001 SALUD
-// TYPE == 1002 MUNICION
+
 +packs_in_fov(ID, TYPE, ANGLE, DIST, HEALTH, POS): TYPE == 1001 & nopaquetefijado & aporsalud
   <-    .print("Se ha disparado packs in fov - health");
         -nopaquetefijado;
@@ -138,10 +122,10 @@ paquete_tipo(1001, "medicina").
     	  .print("He cogido un paquete de tipo: ", Tipo);
     	  if(Type == 1001){
     	     -aporsalud;
-    	  };/*
-        if(Type == 1002)
+    	  };
+        if(Type == 1002){
            -apormunicion;
-    	  };  Cuando esté lo de munición implementado lo podemos poner */
+    	  }; 
         // Vuelve a su pos inicial
         -pack_taken(Type);
         ?asignar(Num);
@@ -149,3 +133,55 @@ paquete_tipo(1001, "medicina").
         .nth(Num, Posiciones, Punto);
         +aPuntoVigia;
         .goto(Punto).
+
+/* Municion */
+// TYPE == 1002 MUNICION
+
++ammo(A): A < 20 & not solicitarMunicion & not disparando //cambiar valor a lo mejor
+	<-
+  if(rotando){
+    -rotando;
+  };
+	+solicitarMunicion.
+
+
++solicitarMunicion
+	<-
+	?capitan(Cap_List);
+  ?asignar(N);
+	.send(Cap_List, tell, solMunicion(N));
+	.wait(1500).
+
++ammo(A): A >= 20 & solicitarMunicion //cambiar valor aqui tb
+  <- 
+  -solicitarMunicion.
+
++solicitudMunicionHecha(N)[source(A)]
+  <-  .print("Solicitud salud hecha"); 
+      +buscarMun.
+
++buscarMun
+  <- ?flag(F);
+     .goto(F);
+     +apormunicion;
+     +nopaquetefijado;
+     -buscarMun.
+
+// TYPE == 1002 Municion
+
++packs_in_fov(ID, TYPE, ANGLE, DIST, HEALTH, POS): TYPE == 1002 & nopaquetefijado & apormunicion
+  <-    .print("Se ha disparado packs in fov - municion");
+        -nopaquetefijado;
+        +aporpaquete;
+        +paqueteacoger(TYPE);
+        .goto(POS).
+
++target_reached(T): aporpaquete
+    <-  -aporpaquete;
+        ?paqueteacoger(P);
+        -paqueteacoger(P);
+        +pack_taken(P).
+
+
+
+

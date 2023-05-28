@@ -33,3 +33,8 @@
     .shoot(5,Position);
   }.
 
++generarMunicion(N)[source(A)]
+  <-  .print(A," nos ha pedido que dejemos paquetes de municion.");
+      .reload;
+      .reload;
+      .print("Paquete de municion creado").
