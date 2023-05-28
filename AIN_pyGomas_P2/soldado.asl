@@ -79,7 +79,7 @@
 
 /* Salud */
 
-+health(H): H < 50 & not solicitarSalud //cambiar valor a lo mejor
++health(H): H < 10 & not solicitarSalud //cambiar valor a lo mejor
 	<-
 	+solicitarSalud.
 
@@ -91,7 +91,7 @@
 	.send(Cap_List, tell, solSalud(N));
 	.wait(1500).
 
-+health(H): H >= 50 & solicitarSalud //cambiar valor aqui tb
++health(H): H >= 10 & solicitarSalud //cambiar valor aqui tb
   <- 
   -solicitarSalud.
 
