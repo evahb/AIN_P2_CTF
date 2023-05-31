@@ -18,6 +18,9 @@
   <- 
   ?soldado(N);
   .send(A, tell, asignar(N));
+  if(N = 4) {
+    +soldadoRefuerzo(A);
+  };
   .print("soldado ", A, " asginado con el numero ",  N);
   -+soldado(N+1).
 
@@ -70,5 +73,17 @@
       .send(A, tell, solicitudMunicionHecha(N));
       .wait(1000);
       -solicitandoAyuda.
+
+
+/*Petición de refuerzo -> enviar soldado 5*/
+
++solicitarRefuerzo(EnemyPos): not refuerzoUsado
+  <- 
+  +refuerzoUsado;
+  ?soldadoRefuerzo(A);
+  ?flag(F);
+  .calcularPosRefuerzo(EnemyPos, Pos);
+  .send(A, tell, reforzar(Pos)).
+
 
   

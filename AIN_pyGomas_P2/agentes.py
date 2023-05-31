@@ -1,5 +1,6 @@
 import json
 import random
+import numpy as np
 from collections import deque
 
 import agentspeak as asp
@@ -68,6 +69,29 @@ class capitan(BDISoldier):
                             #si con esto la posición alcanzable.. en fin...
 
             return tuple(posiciones)
+
         
+        @actions.add_function(".calcularPosRefuerzo", (tuple))
+        def _posicionRefuerzo(enemyPos, bandera):
+            enemyX = enemyPos[0]
+            enemyZ = enemyPos[2]
+
+            banderaX = bandera[0]
+            banderaZ = bandera[2]
+
+            if enemyX == banderaX:
+                angRad = np.sign(enemyZ - banderaZ) * np.pi/2
+            else:
+                angRad = np.arctan((enemyZ - banderaZ)/(enemyX - banderaX))
+            
+            newX = banderaX + np.sin(angRad)*20
+            newZ = banderaZ + np.cos(angRad)*20
+
+            #si no se puede ir que se quede donde estaba
+            if(not self.map.can_walk(np.round(newX), np.round(newZ))):
+                newX = bandera[0]
+                newZ = bandera[2]
+
+            return(tuple([np.round(newX), 0, np.round(newZ)]))
       
     

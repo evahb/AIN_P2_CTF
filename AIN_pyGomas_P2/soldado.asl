@@ -51,6 +51,12 @@ paquete_tipo(1001, "medicina").
   if(rotando){
     -rotando;
   };
+  if(not primerEnemigoVisto) {
+    +primerEnemigoVisto;
+    ?capitan(Cap_List);
+    ?position(MyPos);
+    .send(Cap_List, tell, solicitarRefuerzo(Position));
+  };
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     +disparando;
     .shoot(5,Position);
@@ -185,5 +191,16 @@ paquete_tipo(1001, "medicina").
         +pack_taken(P).
 
 
++reforzarPos(Pos): asignar(N) & N=4
+  <- 
+  +aRefuerzo;
+  .goto(Pos).
+
++target_reached(T): aRefuerzo
+  <-
+  -aRefuerzo;
+  +rotando;
+  +rotar(0);
+  -target_reached(T).
 
 
