@@ -84,7 +84,9 @@
   ?soldadoRefuerzo(A);
   ?flag(F);
   .calcularPosRefuerzo(EnemyPos, F, Pos);
-  .send([A], tell, rerforzar(Pos)).
+  .print("Ayuda solicitada");
+  .send([A], tell, rerforzar(Pos));
+  .print("Ayuda enviada").
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
