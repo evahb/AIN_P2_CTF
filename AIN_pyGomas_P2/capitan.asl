@@ -86,5 +86,23 @@
   .calcularPosRefuerzo(EnemyPos, F, Pos);
   .send([A], tell, rerforzar(Pos)).
 
-
++enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
+  <-
+  .look_at(Position);
+  if(rotando){
+    -rotando;
+  };
+  if(not friends_in_fov(_,_,Angle,_,_,_)){ 
+    +disparando;
+    .shoot(5,Position);
+    if(Health < 3){
+      -disparando;
+      ?health(H);
+      +health(H);
+      ?ammo(A);
+      +ammo(A);
+      +rotando;
+      +rotar(0);
+    };
+  }.
   

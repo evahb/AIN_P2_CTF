@@ -32,7 +32,6 @@
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
-  .print("Salud", Health);
   .look_at(Position);
   if(rotando){
     -rotando;
@@ -40,7 +39,6 @@
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     +disparando;
     .shoot(5,Position);
-    .print("Disparo 5");
     if(Health < 3){
       -disparando;
       ?health(H);

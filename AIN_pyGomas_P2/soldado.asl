@@ -46,7 +46,6 @@ paquete_tipo(1001, "medicina").
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
   <-
-  .print("Salud", Health);
   .look_at(Position);
   if(rotando){
     -rotando;
