@@ -84,8 +84,8 @@ class capitan(BDISoldier):
             else:
                 angRad = np.arctan((enemyZ - banderaZ)/(enemyX - banderaX))
             
-            newX = banderaX + np.sin(angRad)*20
-            newZ = banderaZ + np.cos(angRad)*20
+            newX = banderaX + np.cos(angRad)*20
+            newZ = banderaZ + np.sin(angRad)*20
 
             #si no se puede ir que se quede donde estaba
             if(not self.map.can_walk(int(np.round(newX)), int(np.round(newZ)))):

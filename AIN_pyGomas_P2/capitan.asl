@@ -69,7 +69,7 @@
 +solMunicion(N)[source(A)]: not solicitandoAyuda
   <-  +solicitandoAyuda;
       .print("Soldado", N, " ha solicitado municion.");
-      ?myFieldOps(FieldOps_List);
+      ?myFieldops(FieldOps_List);
       .send(FieldOps_List, tell, generarMunicion(N));
       .send(A, tell, solicitudMunicionHecha(N));
       .wait(1000);
@@ -85,7 +85,7 @@
   ?flag(F);
   .calcularPosRefuerzo(EnemyPos, F, Pos);
   .print("Ayuda solicitada");
-  .send([A], tell, rerforzar(Pos));
+  .send([A], tell, reforzar(Pos));
   .print("Ayuda enviada").
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)

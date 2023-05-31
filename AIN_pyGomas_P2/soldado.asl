@@ -54,7 +54,7 @@ paquete_tipo(1001, "medicina").
     +primerEnemigoVisto;
     ?capitan(Cap_List);
     ?position(MyPos);
-    .print("Ayuda solicitda")
+    .print("Ayuda solicitda");
     .send(Cap_List, tell, solicitarRefuerzo(Position));
   };
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
