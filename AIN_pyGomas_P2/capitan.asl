@@ -12,6 +12,7 @@
 
   .wait(2000);
   .get_medics;
+  .get_fieldops;
   .get_backups.
 
 +asignar("soldado")[source(A)]
@@ -83,7 +84,7 @@
   ?soldadoRefuerzo(A);
   ?flag(F);
   .calcularPosRefuerzo(EnemyPos, F, Pos);
-  .send(A, tell, reforzar(Pos)).
+  .send([A], tell, rerforzar(Pos)).
 
 
   

@@ -61,11 +61,11 @@ class capitan(BDISoldier):
                         for k in range(25,70):
                             if self.map.can_walk(x + i*k, z + j*k):
                                 posiciones.append((x + i*k, 0, z + j*k))
-                                continue
+                                break
                         for k in range(0,25):
                             if self.map.can_walk(x + i*k, z + j*k):
                                 posiciones.append((x + i*k, 0, z + j*k))
-                                continue
+                                break
                             #si con esto la posición alcanzable.. en fin...
 
             return tuple(posiciones)

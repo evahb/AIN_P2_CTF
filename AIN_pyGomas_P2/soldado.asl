@@ -60,7 +60,6 @@ paquete_tipo(1001, "medicina").
   if(not friends_in_fov(_,_,Angle,_,_,_)){ 
     +disparando;
     .shoot(5,Position);
-    .print("Disparo 5");
     if(Health < 3){
       -disparando;
       ?health(H);
@@ -191,7 +190,7 @@ paquete_tipo(1001, "medicina").
         +pack_taken(P).
 
 
-+reforzarPos(Pos): asignar(N) & N=4
++reforzar(Pos): asignar(N) & N=4
   <- 
   +aRefuerzo;
   .goto(Pos).
