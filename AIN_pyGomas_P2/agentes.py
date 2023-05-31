@@ -71,7 +71,7 @@ class capitan(BDISoldier):
             return tuple(posiciones)
 
         
-        @actions.add_function(".calcularPosRefuerzo", (tuple))
+        @actions.add_function(".calcularPosRefuerzo", (tuple, tuple))
         def _posicionRefuerzo(enemyPos, bandera):
             enemyX = enemyPos[0]
             enemyZ = enemyPos[2]
@@ -88,10 +88,10 @@ class capitan(BDISoldier):
             newZ = banderaZ + np.cos(angRad)*20
 
             #si no se puede ir que se quede donde estaba
-            if(not self.map.can_walk(np.round(newX), np.round(newZ))):
+            if(not self.map.can_walk(int(np.round(newX)), int(np.round(newZ)))):
                 newX = bandera[0]
                 newZ = bandera[2]
 
-            return(tuple([np.round(newX), 0, np.round(newZ)]))
+            return(tuple([int(np.round(newX)), 0, int(np.round(newZ))]))
       
     

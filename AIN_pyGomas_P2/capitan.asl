@@ -82,7 +82,7 @@
   +refuerzoUsado;
   ?soldadoRefuerzo(A);
   ?flag(F);
-  .calcularPosRefuerzo(EnemyPos, Pos);
+  .calcularPosRefuerzo(EnemyPos, F, Pos);
   .send(A, tell, reforzar(Pos)).
 
 
