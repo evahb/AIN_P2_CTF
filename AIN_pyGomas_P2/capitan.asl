@@ -20,6 +20,7 @@
   ?soldado(N);
   .send(A, tell, asignar(N));
   if(N == 4) {
+    .print("N == 4");
     +soldadoRefuerzo(A);
   };
   .print("soldado ", A, " asginado con el numero ",  N);
