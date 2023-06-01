@@ -26,11 +26,6 @@ class soldado(BDISoldier):
     def add_custom_actions(self, actions):
         super().add_custom_actions(actions)
 
-        @actions.add(".nuevaaccion", 0)
-        def _nuevaaccion(agent, term, intention):
-        # Codigo
-
-            yield
 
 
 
@@ -39,12 +34,6 @@ class soldado(BDISoldier):
 class capitan(BDISoldier):
     def add_custom_actions(self, actions):
         super().add_custom_actions(actions)
-
-        @actions.add(".nuevaaccion", 0)
-        def _nuevaaccion(agent, term, intention):
-        # Codigo
-
-            yield
 
         @actions.add_function(".posicionSoldados", (tuple))
         def _posicionSoldados(flag):
