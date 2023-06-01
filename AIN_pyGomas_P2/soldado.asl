@@ -4,7 +4,7 @@ paquete_tipo(1001, "medicina").
 
 +flag (F): team(200)
   <-
-  .wait(1000);
+  .wait(1500);
   .get_service("capitan").
 
 
